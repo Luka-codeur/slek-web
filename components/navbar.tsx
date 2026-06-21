@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Mic, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 const links = [
   { label: 'Fonctionnalités', href: '#fonctionnalites' },
@@ -46,9 +47,7 @@ export function Navbar() {
         aria-label="Navigation principale"
       >
         <a href="#" className="flex items-center gap-2" aria-label="Accueil SLEK">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue/15 text-blue">
-            <Mic className="h-4 w-4" aria-hidden="true" />
-          </span>
+          <Image src="/logo.png" alt="SLEK" width={32} height={32} className="rounded-lg" />
           <span className="text-lg font-bold tracking-tight text-foreground">
             SLEK
           </span>
@@ -78,7 +77,7 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border text-foreground md:hidden"
             aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
-            aria-expanded={open}
+            aria-expanded={open ? 'true' : 'false'}
           >
             {open ? (
               <X className="h-5 w-5" aria-hidden="true" />
