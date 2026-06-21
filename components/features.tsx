@@ -16,6 +16,7 @@ const features = [
     icon: Mail,
     title: 'Email',
     text: 'Rédige, envoie et lit vos emails à voix haute. Compatible Gmail via votre compte Google.',
+    pro: true,
   },
   {
     icon: Globe,
@@ -46,6 +47,7 @@ const features = [
     icon: Key,
     title: 'Gestionnaire de mots de passe',
     text: 'Stocke et récupère vos identifiants en toute sécurité, directement à la voix.',
+    pro: true,
   },
   {
     icon: ImageIcon,
@@ -75,7 +77,10 @@ export function Features() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f, i) => (
             <Reveal key={f.title} delay={(i % 3) * 0.08}>
-              <div className="glass group h-full rounded-2xl p-6 transition-colors hover:border-blue/40">
+              <div className="glass group relative h-full rounded-2xl p-6 transition-colors hover:border-blue/40">
+                {f.pro && (
+                  <span className="absolute right-4 top-4 rounded-full bg-blue/15 px-2 py-0.5 text-[10px] font-semibold text-blue">Pro</span>
+                )}
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue/12 text-blue transition-colors group-hover:bg-blue/20">
                   <f.icon className="h-5 w-5" aria-hidden="true" />
                 </div>

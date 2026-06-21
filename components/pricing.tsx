@@ -16,9 +16,9 @@ const freeFeatures = [
 const proFeatures = [
   'Commandes illimitées',
   'Tous les outils (email, terminal, credentials…)',
-  'Priorité sur les modèles IA les plus puissants',
-  'Licence offline — fonctionne sans internet',
-  'Mises à jour à vie (licence à vie disponible)',
+  'Outils avancés : terminal, email, Office, credentials',
+  'Licence activée localement — aucun serveur requis',
+  'Apportez vos propres clés API (Groq, OpenRouter…)',
   'Support prioritaire',
 ]
 
@@ -103,10 +103,10 @@ export function Pricing() {
                   Pro
                 </h3>
                 <p className="mt-4 text-4xl font-bold text-foreground">
-                  À définir
+                  29 €
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Pour une utilisation sans limites
+                  Paiement unique · Sans abonnement
                 </p>
                 <ul className="mt-6 space-y-3">
                   {proFeatures.map((f) => (
@@ -120,7 +120,7 @@ export function Pricing() {
                   ))}
                 </ul>
                 <a
-                  href="#telecharger"
+                  href="/pro"
                   className="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-blue px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-blue/25 transition-colors hover:bg-blue/90"
                 >
                   Obtenir la licence Pro

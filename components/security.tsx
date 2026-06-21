@@ -39,7 +39,7 @@ export function Security() {
             Conçu pour la confiance
           </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Vos données ne quittent pas votre machine.
+            Votre audio est traité localement. SLEK ne stocke aucune de vos données.
           </p>
         </Reveal>
 

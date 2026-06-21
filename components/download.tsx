@@ -6,7 +6,6 @@ import { Reveal } from './reveal'
 
 const requirements = [
   'Windows 10 ou 11 (64-bit)',
-  'Python 3.10 ou supérieur',
   'Microphone fonctionnel',
   'Connexion internet pour les requêtes IA',
   'Chrome installé (optionnel, pour la navigation web)',
@@ -37,9 +36,8 @@ export function Download() {
           minutes.
         </p>
 
-        {/* TODO: remplacer href par le lien de téléchargement réel */}
         <a
-          href="#"
+          href="/download/slek-setup.exe"
           className="mt-9 inline-flex items-center justify-center gap-3 rounded-xl bg-blue px-8 py-4 text-base font-semibold text-primary-foreground shadow-xl shadow-blue/30 transition-colors hover:bg-blue/90"
         >
           <DownloadIcon className="h-5 w-5" aria-hidden="true" />

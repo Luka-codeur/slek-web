@@ -87,7 +87,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.28 }}
           className="mt-5 text-sm text-muted-foreground"
         >
-          Windows 10/11 · Python requis · 20 commandes/jour gratuites
+          Windows 10/11 64-bit · Microphone requis · 20 commandes/jour gratuites
         </motion.p>
       </div>
 
