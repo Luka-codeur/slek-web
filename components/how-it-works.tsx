@@ -21,7 +21,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="px-4 py-24 sm:px-6">
+    <section id="fonctionnement" className="scroll-mt-24 px-4 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -34,7 +34,7 @@ export function HowItWorks() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {steps.map((step, i) => (
-            <Reveal key={step.title} delay={i * 0.1}>
+            <Reveal key={step.title} delay={i * 0.1} from={(['left', 'scale', 'right'] as const)[i % 3]}>
               <div className="glass h-full rounded-2xl p-7">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue/12 text-blue">
                   <step.icon className="h-6 w-6" aria-hidden="true" />

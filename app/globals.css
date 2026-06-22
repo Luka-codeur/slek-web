@@ -81,6 +81,16 @@
     @apply font-sans;
     scroll-behavior: smooth;
   }
+  /* Masque les barres de défilement (l'expérience reste pilotée au scroll) */
+  html,
+  body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer utilities {

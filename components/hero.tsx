@@ -1,50 +1,48 @@
 'use client'
 
 import { motion } from 'motion/react'
-import { Sparkles, ArrowDown } from 'lucide-react'
-import { HeroMockup } from './hero-mockup'
+import { Sparkles, ChevronDown } from 'lucide-react'
+import { SLEK_STATES } from '@/lib/slek-states'
+import { useSlekScene } from './slek-scene-context'
 
 export function Hero() {
-  return (
-    <section className="relative overflow-hidden px-4 pb-20 pt-36 sm:px-6 sm:pt-40">
-      {/* ambient glow */}
-      <div
-        className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[600px] w-[900px] -translate-x-1/2 rounded-full opacity-30 blur-[120px]"
-        style={{
-          background:
-            'radial-gradient(circle at center, #3b82f6 0%, #8b5cf6 45%, transparent 70%)',
-        }}
-        aria-hidden="true"
-      />
-      {/* mesh grid */}
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.18]"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)',
-          backgroundSize: '56px 56px',
-          maskImage:
-            'radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%)',
-        }}
-        aria-hidden="true"
-      />
+  const { stateKey } = useSlekScene()
+  const state = SLEK_STATES[stateKey]
 
-      <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-        <motion.span
+  return (
+    <section className="relative flex min-h-[92vh] flex-col items-center justify-center px-4 pt-28 sm:px-6">
+      <div className="relative mx-auto flex max-w-4xl flex-col items-center text-center">
+        {/* Pastille d'état live — calquée sur l'app SLEK */}
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-sm text-muted-foreground"
+          className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-4 py-1.5 text-sm backdrop-blur-md"
         >
-          <Sparkles className="h-3.5 w-3.5 text-blue" aria-hidden="true" />
-          Assistant vocal IA pour Windows
-        </motion.span>
+          <span className="relative flex h-2 w-2">
+            <span
+              className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 transition-colors duration-700"
+              style={{ backgroundColor: state.core }}
+            />
+            <span
+              className="relative inline-flex h-2 w-2 rounded-full transition-colors duration-700"
+              style={{ backgroundColor: state.core }}
+            />
+          </span>
+          <span
+            className="font-mono text-xs font-semibold tracking-[0.18em] transition-colors duration-700"
+            style={{ color: state.core }}
+          >
+            {state.label}
+          </span>
+          <span className="text-muted-foreground">· Assistant vocal IA</span>
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="mt-6 text-balance text-5xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl"
+          className="mt-7 text-balance text-5xl font-bold leading-[1.04] tracking-tight text-foreground drop-shadow-[0_2px_30px_rgba(0,0,0,0.6)] sm:text-6xl md:text-7xl"
         >
           Pilotez votre PC <br className="hidden sm:block" />
           <span className="text-gradient">à la voix.</span>
@@ -54,7 +52,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.12 }}
-          className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl"
+          className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground drop-shadow-[0_1px_20px_rgba(0,0,0,0.8)] sm:text-xl"
         >
           SLEK écoute, comprend et agit à votre place. Dites simplement ce que
           vous voulez faire — SLEK s&apos;en charge, en français.
@@ -68,16 +66,16 @@ export function Hero() {
         >
           <a
             href="#telecharger"
-            className="inline-flex w-full items-center justify-center rounded-xl bg-blue px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-blue/25 transition-colors hover:bg-blue/90 sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-xl bg-blue px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-blue/30 transition-colors hover:bg-blue/90 sm:w-auto"
           >
             Télécharger SLEK — Gratuit
           </a>
           <a
-            href="#demo"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-transparent px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-secondary sm:w-auto"
+            href="#fonctionnement"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-background/40 px-7 py-3.5 text-base font-medium text-foreground backdrop-blur-md transition-colors hover:bg-secondary sm:w-auto"
           >
-            Voir la démo
-            <ArrowDown className="h-4 w-4" aria-hidden="true" />
+            <Sparkles className="h-4 w-4 text-blue" aria-hidden="true" />
+            Voir comment ça marche
           </a>
         </motion.div>
 
@@ -91,15 +89,18 @@ export function Hero() {
         </motion.p>
       </div>
 
-      <motion.div
-        id="demo"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.3 }}
-        className="mt-16 flex justify-center"
+      {/* indice de scroll */}
+      <motion.a
+        href="#fonctionnement"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        className="mt-16 flex flex-col items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
+        aria-label="Faire défiler vers le bas"
       >
-        <HeroMockup />
-      </motion.div>
+        <span className="text-xs uppercase tracking-widest">Faites défiler</span>
+        <ChevronDown className="h-5 w-5 animate-bounce" aria-hidden="true" />
+      </motion.a>
     </section>
   )
 }

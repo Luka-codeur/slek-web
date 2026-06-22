@@ -24,7 +24,7 @@ const proFeatures = [
 
 export function Pricing() {
   return (
-    <section id="tarifs" className="scroll-mt-20 px-4 py-24 sm:px-6">
+    <section id="tarifs" className="scroll-mt-24 px-4 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-5xl">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -37,7 +37,7 @@ export function Pricing() {
 
         <div className="mt-14 grid items-center gap-6 md:grid-cols-2">
           {/* FREE */}
-          <Reveal>
+          <Reveal from="left">
             <div className="glass rounded-2xl p-8">
               <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 Gratuit
@@ -85,7 +85,7 @@ export function Pricing() {
           </Reveal>
 
           {/* PRO */}
-          <Reveal delay={0.1}>
+          <Reveal from="right" delay={0.1}>
             <div className="relative rounded-2xl p-[1.5px]">
               <div
                 className="absolute inset-0 rounded-2xl"

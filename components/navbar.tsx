@@ -46,9 +46,16 @@ export function Navbar() {
         }`}
         aria-label="Navigation principale"
       >
-        <a href="#" className="flex items-center gap-2" aria-label="Accueil SLEK">
-          <Image src="/logo.png" alt="SLEK" width={32} height={32} className="rounded-lg" />
-          <span className="text-lg font-bold tracking-tight text-foreground">
+        <a href="#" className="flex items-center gap-2.5" aria-label="Accueil SLEK">
+          <Image
+            src="/logo.png"
+            alt="SLEK"
+            width={44}
+            height={44}
+            priority
+            className="h-11 w-11 drop-shadow-[0_0_12px_rgba(59,130,246,0.45)]"
+          />
+          <span className="text-xl font-bold tracking-tight text-foreground">
             SLEK
           </span>
         </a>

@@ -15,10 +15,7 @@ export function Download() {
   const [open, setOpen] = useState(false)
 
   return (
-    <section
-      id="telecharger"
-      className="relative scroll-mt-20 overflow-hidden px-4 py-28 sm:px-6"
-    >
+    <section id="telecharger" className="relative scroll-mt-24 overflow-hidden px-4 py-20 sm:px-6 sm:py-28">
       <div
         className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-25 blur-[130px]"
         style={{

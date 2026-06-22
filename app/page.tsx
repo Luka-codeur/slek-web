@@ -6,20 +6,27 @@ import { Security } from '@/components/security'
 import { Pricing } from '@/components/pricing'
 import { Download } from '@/components/download'
 import { Footer } from '@/components/footer'
+import { SlekSceneProvider } from '@/components/slek-scene-context'
+import { SceneMount } from '@/components/scene-mount'
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <main>
-        <Hero />
-        <HowItWorks />
-        <Features />
-        <Security />
-        <Pricing />
-        <Download />
-      </main>
-      <Footer />
-    </div>
+    <SlekSceneProvider>
+      {/* Scène 3D fixe, immersive en fond sur tout le site */}
+      <SceneMount />
+
+      <div className="relative z-10">
+        <Navbar />
+        <main className="flex flex-col gap-y-12 sm:gap-y-24">
+          <Hero />
+          <HowItWorks />
+          <Features />
+          <Security />
+          <Pricing />
+          <Download />
+        </main>
+        <Footer />
+      </div>
+    </SlekSceneProvider>
   )
 }

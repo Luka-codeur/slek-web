@@ -63,7 +63,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="fonctionnalites" className="scroll-mt-20 px-4 py-24 sm:px-6">
+    <section id="fonctionnalites" className="scroll-mt-24 px-4 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -76,7 +76,7 @@ export function Features() {
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f, i) => (
-            <Reveal key={f.title} delay={(i % 3) * 0.08}>
+            <Reveal key={f.title} delay={(i % 3) * 0.08} from={(['up', 'scale', 'down', 'down', 'scale', 'up'] as const)[i % 6]}>
               <div className="glass group relative h-full rounded-2xl p-6 transition-colors hover:border-blue/40">
                 {f.pro && (
                   <span className="absolute right-4 top-4 rounded-full bg-blue/15 px-2 py-0.5 text-[10px] font-semibold text-blue">Pro</span>
