@@ -86,6 +86,7 @@
   body {
     scrollbar-width: none;
     -ms-overflow-style: none;
+    overflow-x: hidden;
   }
   html::-webkit-scrollbar,
   body::-webkit-scrollbar {
