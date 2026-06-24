@@ -8,10 +8,13 @@ import { Download } from '@/components/download'
 import { Footer } from '@/components/footer'
 import { SlekSceneProvider } from '@/components/slek-scene-context'
 import { SceneMount } from '@/components/scene-mount'
+import { LoadingScreen } from '@/components/loading-screen'
 
 export default function Page() {
   return (
     <SlekSceneProvider>
+      <LoadingScreen />
+
       {/* Scène 3D fixe, immersive en fond sur tout le site */}
       <SceneMount />
 
