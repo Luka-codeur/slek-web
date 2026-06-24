@@ -8,6 +8,9 @@ import {
   Key,
   Image as ImageIcon,
   BookOpen,
+  MousePointer2,
+  BarChart2,
+  Terminal,
 } from 'lucide-react'
 import { Reveal } from './reveal'
 
@@ -21,7 +24,7 @@ const features = [
   {
     icon: Globe,
     title: 'Navigation web',
-    text: 'Ouvre des sites, effectue des recherches, clique sur des éléments et extrait des informations depuis n\u2019importe quelle page.',
+    text: 'Ouvre des sites, effectue des recherches, clique sur des éléments et extrait des informations depuis n’importe quelle page.',
   },
   {
     icon: FileText,
@@ -36,7 +39,7 @@ const features = [
   {
     icon: Eye,
     title: 'Vision',
-    text: 'Analyse ce qu\u2019il y a à l\u2019écran : identifie les éléments, lit le texte visible, décrit la situation.',
+    text: 'Analyse ce qu’il y a à l’écran : identifie les éléments, lit le texte visible, décrit la situation.',
   },
   {
     icon: Bell,
@@ -51,13 +54,33 @@ const features = [
   },
   {
     icon: ImageIcon,
-    title: 'Fond d\u2019écran & interface',
-    text: 'Change votre fond d\u2019écran, interagit avec l\u2019interface Windows (clics, saisie, raccourcis).',
+    title: 'Fond d’écran & interface',
+    text: 'Change votre fond d’écran, interagit avec l’interface Windows (clics, saisie, raccourcis).',
+    standard: true,
   },
   {
     icon: BookOpen,
     title: 'Mémoire contextuelle',
     text: 'SLEK se souvient des informations que vous lui confiez au fil de la conversation.',
+    standard: true,
+  },
+  {
+    icon: MousePointer2,
+    title: 'Automatisation d’interface',
+    text: 'Cliquez sur n’importe quel bouton, champ ou icône par description vocale. SLEK localise l’élément dans l’interface Windows ou sur le web et clique à votre place — sans coordonnées ni sélecteur.',
+    standard: true,
+  },
+  {
+    icon: BarChart2,
+    title: 'Graphiques & analyse de données',
+    text: 'Chargez un fichier CSV ou Excel, demandez oralement une analyse ou un graphique (courbe, barres, camembert) — SLEK génère le visuel et vous lit les insights clés.',
+    standard: true,
+  },
+  {
+    icon: Terminal,
+    title: 'Exécution de code',
+    text: 'Demandez à SLEK d’écrire et d’exécuter un script Python sur votre machine : traitement de fichiers, automatisation, calculs avancés. Le résultat est lu à voix haute.',
+    pro: true,
   },
 ]
 
@@ -80,6 +103,9 @@ export function Features() {
               <div className="glass group relative h-full rounded-2xl p-6 transition-colors hover:border-blue/40">
                 {f.pro && (
                   <span className="absolute right-4 top-4 rounded-full bg-blue/15 px-2 py-0.5 text-[10px] font-semibold text-blue">Pro</span>
+                )}
+                {f.standard && (
+                  <span className="absolute right-4 top-4 rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">Standard</span>
                 )}
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue/12 text-blue transition-colors group-hover:bg-blue/20">
                   <f.icon className="h-5 w-5" aria-hidden="true" />

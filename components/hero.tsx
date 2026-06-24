@@ -29,13 +29,7 @@ export function Hero() {
               style={{ backgroundColor: state.core }}
             />
           </span>
-          <span
-            className="font-mono text-xs font-semibold tracking-[0.18em] transition-colors duration-700"
-            style={{ color: state.core }}
-          >
-            {state.label}
-          </span>
-          <span className="text-muted-foreground">· Assistant vocal IA</span>
+          <span className="text-muted-foreground">Assistant vocal IA</span>
         </motion.div>
 
         <motion.h1
@@ -85,7 +79,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.28 }}
           className="mt-5 text-sm text-muted-foreground"
         >
-          Windows 10/11 64-bit · Microphone requis · 20 commandes/jour gratuites
+          Windows 10/11 64-bit · Microphone requis · 50 commandes/jour gratuites
         </motion.p>
       </div>
 

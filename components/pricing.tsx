@@ -2,15 +2,18 @@ import { Check, X } from 'lucide-react'
 import { Reveal } from './reveal'
 
 const freeFeatures = [
-  { label: '20 commandes par jour', included: true },
+  { label: '50 commandes par jour', included: true },
   { label: 'Navigation web', included: true },
   { label: 'Documents & PDF', included: true },
   { label: 'Rappels', included: true },
   { label: 'Contrôle système de base', included: true },
-  { label: 'Email (Pro)', included: false },
-  { label: 'Terminal & scripts (Pro)', included: false },
-  { label: 'Gestionnaire de mots de passe (Pro)', included: false },
-  { label: 'Word & Outlook COM (Pro)', included: false },
+  { label: 'Email (envoi et capture par email)', included: false },
+  { label: 'Terminal / shell (run_command, run_as_admin)', included: false },
+  { label: 'Exécution de code Python (run_python)', included: false },
+  { label: 'Contrôle système avancé (extinction, redémarrage)', included: false },
+  { label: 'Gestionnaire de mots de passe (enregistrement et lecture)', included: false },
+  { label: 'Word COM (ajout/suppression dans documents Word)', included: false },
+  { label: 'Outlook COM (lecture boîte de réception)', included: false },
 ]
 
 const proFeatures = [

@@ -39,7 +39,7 @@ export function Security() {
             Conçu pour la confiance
           </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Votre audio est traité localement. SLEK ne stocke aucune de vos données.
+            La reconnaissance vocale fonctionne localement (Vosk, hors-ligne). Vos commandes texte sont envoyées au LLM pour traitement — aucune donnée audio n&apos;est transmise ni stockée.
           </p>
         </Reveal>
 

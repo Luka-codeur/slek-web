@@ -34,7 +34,7 @@ export function Download() {
         </p>
 
         <a
-          href="/download/slek-setup.exe"
+          href="https://github.com/Luka-codeur/slek-releases/releases/latest/download/SLEK-Setup.exe"
           className="mt-9 inline-flex items-center justify-center gap-3 rounded-xl bg-blue px-8 py-4 text-base font-semibold text-primary-foreground shadow-xl shadow-blue/30 transition-colors hover:bg-blue/90"
         >
           <DownloadIcon className="h-5 w-5" aria-hidden="true" />
@@ -45,10 +45,6 @@ export function Download() {
           <span className="inline-flex items-center gap-2">
             <Monitor className="h-4 w-4 text-blue" aria-hidden="true" />
             Windows 10 / 11
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-blue" aria-hidden="true" />
-            Python 3.10+
           </span>
           <span className="inline-flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-blue" aria-hidden="true" />
